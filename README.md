@@ -2,10 +2,10 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/typomedia/gitti)](https://goreportcard.com/report/github.com/typomedia/gitti)
 
-Manage `Git` repositories with ease via Webhooks. It's main purpose is to provide a simple way to update repositories on staging areas.
+Manage `Git` repositories with ease via Webhooks. It's main purpose is to provide a simple way to update repositories remotely on staging areas.
 
 Please be careful when using `gitti` in your environment.
-It's in an early development stage and not widely tested. Use it at your own risk!
+It's in an **early development stage** and not widely tested. Use it at your own risk!
 
 ## Usage
 
