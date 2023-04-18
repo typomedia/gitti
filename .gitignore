@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+bin/
+go.sum
+*.log
+*.toml
+*.syso

@@ -1,0 +1,14 @@
+[Unit]
+Description=Git HTTP Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/gitti
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
