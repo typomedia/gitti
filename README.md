@@ -4,6 +4,9 @@
 
 Manage `Git` repositories with ease via Webhooks. It's main purpose is to provide a simple way to update repositories on staging areas.
 
+Please be careful when using `gitti` in your environment.
+It's in an early development stage and not widely tested. Use it at your own risk!
+
 ## Usage
 
     gitti [command] [flags]
