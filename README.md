@@ -1,8 +1,8 @@
-# Gitti - Git HTTP Runner
+# Gitti - Git HTTP Daemon
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/typomedia/gitti)](https://goreportcard.com/report/github.com/typomedia/gitti)
 
-Manage `Git` repositories with ease via Webhooks.
+Manage `Git` repositories with ease via Webhooks. It's main purpose is to provide a simple way to update repositories on staging areas.
 
 ## Usage
 
