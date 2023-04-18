@@ -1,5 +1,7 @@
 # Gitti - Git HTTP Runner
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/typomedia/gitti)](https://goreportcard.com/report/github.com/typomedia/gitti)
+
 Manage `Git` repositories with ease via Webhooks.
 
 ## Usage
