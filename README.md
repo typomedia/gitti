@@ -1,11 +1,16 @@
 # Gitti - Git HTTP Daemon
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/typomedia/gitti)](https://pkg.go.dev/github.com/typomedia/gitti)
 [![Go Report Card](https://goreportcard.com/badge/github.com/typomedia/gitti)](https://goreportcard.com/report/github.com/typomedia/gitti)
 
 Manage `Git` repositories with ease via Webhooks. It's main purpose is to provide a simple way to update repositories remotely on staging areas.
 
 Please be careful when using `gitti` in your environment.
 It's in an **early development stage** and not widely tested. Use it at your own risk!
+
+## Install
+
+    go install github.com/typomedia/gitti@latest
 
 ## Usage
 
@@ -102,7 +107,7 @@ Deletes all temporary branches created by `gitti`.
 curl http://localhost:4000/prune/myrepo
 ```
 
-## Authentication
+## Authorization
 
 If `[auth]` is `enabled = true` in the config file, you need to provide the `token` in the `Authorization` header. 
 The `token` is a random string that is generated on the first run of `gitti serve`. If you like, you can change it in the config file.
