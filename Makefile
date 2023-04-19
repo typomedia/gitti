@@ -28,4 +28,11 @@ loc:
 	go install github.com/boyter/scc/v3@latest
 	scc --exclude-dir vendor --exclude-dir bin .
 
+compile:
+	go mod tidy
+	GOOS=linux GOARCH=arm64 go build -ldflags "-s -w" -o bin/gitti-linux-arm64 .
+	GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" -o bin/gitti-linux-amd64 .
+	GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o bin/gitti-macos-amd64 .
+	GOOS=windows GOARCH=amd64 go build -ldflags "-s -w" -o bin/gitti-win-amd64.exe .
+
 win: icon build
