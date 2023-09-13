@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/spf13/viper"
-	"github.com/typomedia/gitti/app/git"
+	"github.com/typomedia/gitti/app/git/ext"
 	"net/http"
 )
 
@@ -24,7 +24,7 @@ func Pull(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	pull := git.Pull(repo.Path)
+	pull := ext.Pull(repo.Path)
 
 	fmt.Fprintf(w, "%v\n", pull)
 
