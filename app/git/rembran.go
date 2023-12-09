@@ -18,12 +18,5 @@ func RemoteBranches(path string) []*plumbing.Reference {
 		InsecureSkipTLS: true,
 	})
 
-	// Print the remote branches
-	// for _, ref := range refs {
-	//	if ref.Name().IsRemote() {
-	//		fmt.Println(ref.Name().Short())
-	//	}
-	// }
-
 	return refs
 }

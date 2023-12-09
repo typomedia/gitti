@@ -3,26 +3,17 @@ package hdlr
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/spf13/viper"
 	"github.com/typomedia/gitti/app/git/ext"
+	"github.com/typomedia/gitti/app/helper"
 	"net/http"
 )
 
 func Pull(w http.ResponseWriter, r *http.Request) {
-	repo := Repo{}
 	vars := mux.Vars(r)
 	project := vars["project"]
-	config := viper.AllSettings()
-	repos := config["repos"].(map[string]interface{})
 
-	for name, path := range repos {
-		if name == project {
-			repo = Repo{
-				Name: name,
-				Path: path.(string),
-			}
-		}
-	}
+	// Get the repo from config
+	repo := helper.GetRepo(project)
 
 	pull := ext.Pull(repo.Path)
 

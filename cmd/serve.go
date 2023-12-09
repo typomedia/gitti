@@ -49,6 +49,7 @@ func startServer(port int) {
 	router.HandleFunc("/checkout/{project}", hdlr.Checkout)
 	router.HandleFunc("/pull/{project}", hdlr.Pull)
 	router.HandleFunc("/prune/{project}", hdlr.Prune)
+	router.HandleFunc("/branches/{project}", hdlr.Branches)
 	router.Use(hdlr.Logger)
 
 	if viper.GetBool("auth.enabled") {

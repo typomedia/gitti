@@ -4,7 +4,8 @@ build:
 
 run:
 	go mod tidy
-	go run main.go serve
+	go install github.com/cosmtrek/air@latest
+	air serve
 
 icon:
 	go install github.com/akavel/rsrc@latest

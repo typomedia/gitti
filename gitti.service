@@ -6,7 +6,8 @@ After=network.target
 Type=simple
 User=root
 Group=root
-ExecStart=/usr/bin/gitti
+WorkingDirectory=/etc/gitti
+ExecStart=/usr/bin/gitti serve
 
 Restart=always
 

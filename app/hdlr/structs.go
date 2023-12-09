@@ -1,6 +1,10 @@
 package hdlr
 
-type Repo struct {
-	Name string
-	Path string
+type Refs struct {
+	Branches []Branch
+}
+
+type Branch struct {
+	Name     string
+	Revision string
 }
