@@ -18,5 +18,4 @@ func Log(w http.ResponseWriter, r *http.Request) {
 	_, commit := git.Log(repo.Path)
 
 	fmt.Fprintf(w, "%v\n", commit)
-
 }

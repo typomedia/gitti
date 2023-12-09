@@ -2,6 +2,7 @@ package helper
 
 import (
 	"github.com/spf13/viper"
+	"sort"
 )
 
 type Repos struct {
@@ -26,21 +27,26 @@ func GetRepos() Repos {
 
 	}
 
+	// Sort the repos by name
+	sort.Slice(repositories.Repos[:], func(i, j int) bool {
+		return repositories.Repos[i].Name < repositories.Repos[j].Name
+	})
+
 	return repositories
 }
 
 func GetRepo(project string) Repo {
-	repo := Repo{}
+	repository := Repo{}
 	repos := GetRepos()
 
 	for _, repo := range repos.Repos {
 		if repo.Name == project {
-			repo = Repo{
+			repository = Repo{
 				Name: repo.Name,
 				Path: repo.Path,
 			}
 		}
 	}
 
-	return repo
+	return repository
 }
