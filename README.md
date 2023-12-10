@@ -107,6 +107,16 @@ Deletes all temporary branches created by `gitti`.
 curl http://localhost:4000/prune/myrepo
 ```
 
+### Branches
+
+Lists all remote branches of the repository as `JSON`.
+
+    GET /branches/:repo
+
+```    
+curl http://localhost:4000/branches/myrepo
+```
+
 ## Authorization
 
 If `[auth]` is `enabled = true` in the config file, you need to provide the `token` in the `Authorization` header. 
