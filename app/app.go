@@ -13,7 +13,7 @@ type Application struct {
 
 var App = Application{
 	Name:        "gitti",
-	Version:     "0.1.2",
+	Version:     "0.1.3",
 	Author:      "Philipp Speck <philipp@typo.media>",
 	Description: "Git HTTP Daemon",
 	Explanation: "Git HTTP Daemon for managing multiple repositories via web hooks.",
