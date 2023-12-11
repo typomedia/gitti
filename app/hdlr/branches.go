@@ -5,8 +5,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/typomedia/gitti/app/git"
 	"github.com/typomedia/gitti/app/helper"
-	"github.com/typomedia/gitti/app/msg"
 	"net/http"
+	"sort"
 )
 
 func Branches(w http.ResponseWriter, r *http.Request) {
@@ -32,11 +32,20 @@ func Branches(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	//json.NewEncoder(w).Encode(branches)
-	jsonData, err := json.Marshal(branches)
-	msg.Check(err)
+	// sort branches by name
+	branches.SortByName()
+
+	//jsonData, err := json.Marshal(branches)
+	//msg.Check(err)
 
 	// set application/json header
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(jsonData)
+	//w.Write(jsonData)
+	json.NewEncoder(w).Encode(branches)
+}
+
+func (refs *Refs) SortByName() {
+	sort.Slice(refs.Branches, func(i, j int) bool {
+		return refs.Branches[i].Name < refs.Branches[j].Name
+	})
 }
